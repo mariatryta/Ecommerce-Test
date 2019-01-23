@@ -1,28 +1,44 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <top-bar></top-bar>
+    <hero-img></hero-img>
+    <list-products v-bind:products='products'></list-products>
+    <bottom-bar></bottom-bar>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ListProducts from './components/ListProducts'
+import TopBar from './components/Header'
+import Hero from './components/Hero'
+import BottomBar from './components/footer'
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css'
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+  components:{
+    'list-products':ListProducts,
+    'hero-img': Hero,
+    'top-bar': TopBar,
+    'bottom-bar':BottomBar
+  },
+   data() {
+     return {
+       products: [
+        {name: 'Ryu', speciality: 'Vue Components'},
+        {name: 'Crystal', speciality: 'HTML Wizardry'},
+        {name: 'Hitoshi', speciality: 'Click Events'},
+        {name: 'Tango', speciality: 'Conditionals'},
+        {name: 'Kami', speciality: 'Webpack' },
+        {name: 'Yoshi', speciality: 'Data Diggin'}
+      ],
+     }
+   },
+   methods: {
+     
+   },
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
