@@ -1,26 +1,12 @@
 <template>
-<footer>
-    <p>You have total of {{cart.items.length}} items</p>
-</footer>
+    <footer class="bg-light py-3 text-center">
+        <p class="mx=auto">Made by Ecommerce store with Vue.js</p>
+    </footer>
 </template>
 
-<script>
-import {bus} from '../main';
- 
-export default {
-    
-    data(){
-        return{
-            cart:{
-                items:[]
-            }
-        }
-    },
-    created(){
-      bus.$on('cartChanged',(items)=> {
-        this.cart.items = items;
-      })
+<style scoped>
+    p {
+    margin: 0px;
+    padding: 0px;
     }
-}
-</script>
-
+</style>

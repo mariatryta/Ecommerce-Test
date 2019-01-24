@@ -11,7 +11,8 @@
 import ListProducts from './components/ListProducts'
 import TopBar from './components/Header'
 import Hero from './components/Hero'
-import BottomBar from './components/footer'
+import BottomBar from './components/Footer'
+
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css'
 
@@ -41,4 +42,21 @@ export default {
 </script>
 
 <style>
+html { font-size: 1rem; }
+
+@media all and (max-width: 1200px) { /* screen size until 1200px */
+    body {
+        font-size: 1em; /* 1.5x default size */
+    }
+}
+@media all and (max-width: 1000px) { /* screen size until 1000px */
+    body {
+        font-size: 1em; /* 1.2x default size */
+        }
+    }
+@media all and (max-width: 500px) { /* screen size until 500px */
+    body {
+        font-size: 0.9em; /* 0.8x default size */
+        }
+}
 </style>
